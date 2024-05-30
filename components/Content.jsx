@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = () => {
   return (
-    <div className="flex flex-col gap-16 items-center text-center mb-11 lg:mb-20">
+    <div className="flex flex-col gap-16 items-center text-center mb-11 lg:mb-20 px-7">
       <h3 className="text-3xl lg:text-5xl font-bold text-white">
         <span className="text-primary">Čo</span> ponúkame{" "}
         <span className="text-primary"> .</span>

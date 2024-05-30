@@ -1,8 +1,9 @@
+"use client";
 import { Menu } from "lucide-react";
 import { Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -13,6 +14,11 @@ import {
 } from "./ui/sheet";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   const NAV_LINKS = [
     {
       label: "Kontakt",
@@ -54,19 +60,22 @@ const Navbar = () => {
         ))}
       </ul>
       <div className="text-3xl hidden max-md:block">
-        <Sheet>
-          <SheetTrigger className="text-white  hover:text-primary hover:transition-all duration-300">
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger
+            onClick={() => setIsOpen(true)}
+            className="text-white  hover:text-primary hover:transition-all duration-300"
+          >
             <Menu className=""></Menu>
           </SheetTrigger>
-          <SheetContent className="w-[400px] sm:w-[540px] bg-zinc-900 text-slate-200">
+          <SheetContent className=" sm:w-[540px] bg-zinc-900 text-slate-200 w-screen">
             <ul className="flex gap-10 flex-col font-bold text-2xl justify-center items-center  ">
-              <li>
+              <li onClick={handleLinkClick}>
                 <Link className="" href={"/"}>
                   <Home className=" text-white  hover:text-primary hover:transition-all duration-300"></Home>
                 </Link>
               </li>
               {NAV_LINKS.map((link) => (
-                <li key={link.label}>
+                <li key={link.label} onClick={handleLinkClick}>
                   <Link
                     className="hover:text-primary hover:transition-all duration-300"
                     href={link.href}
