@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 flex flex-col min-h-screen justify-between ">
+      <body className="bg-zinc-900 flex flex-col min-h-screen  ">
         <Navbar></Navbar>
         {children}
         <Footer />

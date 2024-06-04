@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className=" mx-auto text-center max-w-[1440px] items-center flex flex-col pt-24 h-full w-full px-8 lg:px-3">
+    <div className=" mx-auto text-center max-w-[1440px] items-center flex flex-col pt-24  w-full px-8 lg:px-3">
       <h3 class=" text-3xl lg:text-5xl text-white mb-7 font-bold ">
         O <span className="text-primary">nás </span>
       </h3>
